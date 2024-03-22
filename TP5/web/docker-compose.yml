@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: nginx_serveur
+    hostname : nginx_serveur
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html/:/var/www/html
+    restart: always
+  db:
+    image: mariadb
+    container_name: db
+    hostname: db
+    environment:
+      MYSQL_ROOT_PASSWORD: mypass
+      MYSQL_DATABASE: woodytoys
+      MYSQL_USER: user
+      MYSQL_PASSWORD: mypass
+    volumes:
+      - ./DB/sql:/docker-entrypoint-initdb.d
+      - ./DB/conf/my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf
+  php:
+    image: php
+    container_name: php
+    hostname: php
+    volumes:
+      - ./html:/var/www/html
