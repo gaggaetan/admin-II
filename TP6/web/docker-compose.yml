@@ -18,8 +18,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
       MYSQL_DATABASE: ${DATABASE}
-      MYSQL_USER: ${PHP_USER}
-      MYSQL_PASSWORD: ${PHP_PASS}
+      MYSQL_USER: ${USER_DB}
+      MYSQL_PASSWORD: ${USER_PASS}
     volumes:
       - ./DB/sql:/docker-entrypoint-initdb.d
       - ./DB/conf/my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf
