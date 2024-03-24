@@ -32,7 +32,7 @@ $result = mysqli_query($connect,"SELECT id, name, price FROM products");
     <th>Descriptif</th> 
     <th>Prix</th>
 </tr>
-<?php
+<?
 while ($row = mysqli_fetch_array($result)) {
         printf("<tr><th>%s</th> <th>%s</th> <th>%s</th></tr>", $row['id'], $row['name'], $row['price']);
 
