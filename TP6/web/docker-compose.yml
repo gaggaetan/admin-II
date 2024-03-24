@@ -16,10 +16,10 @@ services:
     container_name: db
     hostname: db
     environment:
-      MYSQL_ROOT_PASSWORD: mypass
-      MYSQL_DATABASE: woodytoys
-      MYSQL_USER: user
-      MYSQL_PASSWORD: mypass
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
+      MYSQL_DATABASE: ${DATABASE}
+      MYSQL_USER: ${PHP_USER}
+      MYSQL_PASSWORD: ${PHP_PASS}
     volumes:
       - ./DB/sql:/docker-entrypoint-initdb.d
       - ./DB/conf/my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf
