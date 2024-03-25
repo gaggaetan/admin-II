@@ -45,6 +45,11 @@ services:
     networks:
       - dmz
       - db_net
+  certbot:
+    image: certbot/certbot:v2.6.0
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
 networks:
   dmz:
   db_net:
