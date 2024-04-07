@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script> <!-- DO NOT MOVE THIS LINE : line => 4 -->
+    <title>Ping Checker</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-spacing: 0;
+        }
+        th, td{
+            padding: 5px;
+        }
+        #ip{
+            width: 100px;
+        }
+        #ping{
+            width: 40px;
+        }
+        #http, #https{
+            width:20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="time"></div>
+    <table id="result">
+        <tr>
+            <th id="ip"> IP </th><th id="ping"> PING </th ><th id=ports> OPEN PORTS [80, 53, 443, 22, 8080] </th><th id=group> GROUP </th><th id=http> HTTP </th> <th id=https> HTTPS </th>
+        </tr>
+    </table>
+
+
+</body>
+</html>
