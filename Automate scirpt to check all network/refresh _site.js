@@ -31,7 +31,7 @@ async function saveHtml(url, filename) {
 }
 
 async function main() {
-    const url = 'http://127.0.0.1:5000/refrech-site';
+    const url = 'http://54.37.12.151:5000/refrech-site';
     const filename = 'templates/index.html';
     await saveHtml(url, filename);
 }

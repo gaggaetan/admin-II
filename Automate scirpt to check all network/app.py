@@ -8,7 +8,7 @@ from utilities.check_http_https import check_https, check_http
 app = Flask(__name__)
 
 def check_ping(ip):
-    result = subprocess.run(['ping', '-n', '1', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    result = subprocess.run(['ping', '-c', '1', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return result.returncode == 0
 
 
@@ -60,4 +60,4 @@ def find_ip():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
