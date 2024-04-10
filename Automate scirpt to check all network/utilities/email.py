@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 sender = "gaetan.carbonnelle1@gmail.com"
 recipients = [sender,"gaetan.carbonnelle1@gmail.com"]
-password = "hsot ijrh dbud rfef"
+password = ""
 
 
 def send_email(subject, body ):
