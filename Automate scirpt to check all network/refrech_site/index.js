@@ -37,6 +37,8 @@ function check_ports(ip) {
     });
 }
 
+
+
 window.onload = function() {
     fetch('/all-vps.json')
     .then(response => response.json())
@@ -84,6 +86,15 @@ window.onload = function() {
                     })
                     .then(response => response.json())
                     .then(status => {
+                        if (group == "l2-2") {
+                                fetch('/vps-status', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({"vps-status": status.https})
+                                })
+                            }
                         try {
                             document.getElementById(status['ip']).innerHTML += `<td>${group.toUpperCase()}</td>
                                                                                 <td style="background: ${status.http ? 'green' : 'red'}"><a target="_blank" href="http://www.${group}.ephec-ti.be">${String(status.http).toUpperCase()}</a></td>

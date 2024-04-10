@@ -4,8 +4,11 @@ import requests
 from utilities.check_ports_vps import get_open_ports
 from utilities.find_IP import get_ip_address
 from utilities.check_http_https import check_https, check_http
+from utilities.email import send_email
 
 app = Flask(__name__)
+global vps_old_status
+vps_old_status = False
 
 def check_ping(ip):
     result = subprocess.run(['ping', '-c', '1', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -55,6 +58,20 @@ def find_ip():
     http = check_http(url)
     https = check_https(url)
     return jsonify({'ip': ip, 'http': http, 'https': https})
+
+@app.route('/vps-status', methods=['post'])
+def status():
+    global vps_old_status
+    vps_status = request.json.get("vps-status")
+    if vps_old_status and vps_status == False :
+        vps_old_status = False
+        print('send email down')
+        send_email("VPS-HTTPS IS DOWN", "ALLERT, your HTTPS on your VPS is DOWN")
+    elif not vps_old_status and vps_status == True :
+        vps_old_status = True
+        send_email("VPS-HTTPS IS UP", "That is great, your HTTPS on your VPS is up")
+        print('send email up')
+    return jsonify("ok")
 
 
 
