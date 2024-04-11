@@ -17,5 +17,5 @@ jobs:
           host: '54.37.12.151'
           username: 'alois'
           password: 'Je suis un he202277'
-          port: 50501
+          port: 55555
           script: pkill -9 -f "python3" && pkill -9 -f "node" && git fetch origin && git pull & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 10 && python3 app.py & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 30 && node refresh_site.js
