@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - Develop
+
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest] 
+    steps: 
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Push to server 
+        uses: appleboy/ssh-action@master
+        with:
+          host: '54.37.12.151'
+          username: 'alois'
+          password: 'Je suis un he202277'
+          port: 50501
+          script: pkill -9 -f "python3 app.py" && pkill -9 -f "node refresh_site.js" && git fetch origin && git pull & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 10 && python3 app.py & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 30 && node refresh_site.js
