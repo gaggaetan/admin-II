@@ -18,4 +18,4 @@ jobs:
           username: 'alois'
           password: 'Je suis un he202277'
           port: 55555
-          script: git fetch origin && git pull & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 10 && python3 app.py & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 30 && node refresh_site.js
+          script: cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && git fetch origin && git pull & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 10 && python3 app.py & cd ~/admin-II/Automate\ scirpt\ to\ check\ all\ network/ && sleep 30 && node refresh_site.js
