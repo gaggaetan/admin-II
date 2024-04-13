@@ -1,0 +1,68 @@
+Return-Path: <aloischarlier100@gmail.com>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id uPRRLtyXGmb3BgAAs8Qtnw
+	(envelope-from <aloischarlier100@gmail.com>)
+	for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 14:34:04 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id BB935211BE
+	for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 14:34:04 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=209.85.208.182; helo=mail-lj1-f182.google.com; envelope-from=aloischarlier100@gmail.com; receiver=<UNKNOWN> 
+Authentication-Results: mail.l2-2.ephec-ti.be; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: mail.l2-2.ephec-ti.be;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20230601 header.b=VDs9d0kQ;
+	dkim-atps=neutral
+Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com [209.85.208.182])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTPS id 64D39211BD
+	for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 14:34:03 +0000 (UTC)
+Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-2d48d75ab70so26443811fa.0
+        for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 07:34:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1713018837; x=1713623637; darn=l2-2.ephec-ti.be;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=e00AlVNIpz7NpbbgUV+vkmTe/wYGZwG6tNCVTRzIlFw=;
+        b=VDs9d0kQE1ad6ChLH7uFH1E+6wguIkPwVu/227dJPTgMhU2qWcrEoZgzUnUP+LyEY8
+         +iDNmbaYTqxcOgkhKlGlGOEMGp6uIFNvwEBZj/7NLxvji+t31QNNg2sQmkH7IMaNEhPd
+         TIsBVzyfeCtO8RIQ7QKWoMsHotGVc0+LWXqWWpRH0KrH0oBx5zOG1OA0bUEL3Yrpv5v2
+         dijZfNq3cniz8e2so5lRLqvhdM3rbJM1qzWj+gIqT5PGzaADbV8ywRTq5PJiJr2mNaUe
+         FdtrWnp6s8v/GVGibjN8nDKtZEzjQKKnddfzUmlFVW2IDnT30AFPMbTgeSsacHHMWyyD
+         ppPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1713018837; x=1713623637;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=e00AlVNIpz7NpbbgUV+vkmTe/wYGZwG6tNCVTRzIlFw=;
+        b=iTtvfn/xgWWk1+UAOpd+pyw4bC2xk76NRL/eyyrLmXzs6+itQCyZypIhISP0mltXJx
+         3+TXntX0Rs48aMYxSnm7YqJ8IpwjSGuwjSB6JiAdGD+KBwxEbXbKE4F8TRo8MzBJN6aH
+         Y0GLTWG8l6/6d+WiXtAbVhroE+jKxr9zbvzxdgu+PWA9QXJqDUn/J0xH8TBp9DWZysYc
+         Aw4PAvOeRdYE0nNWk6HWCE3C+HpdURzBXLndvth2V1ejn7yE6rUSfjUuCt08/k5rMmGR
+         bIXY3OztGW1cp1vZ6b8ZL2+uMo/pii0zsSbd64+9HFVGcKaR81fYQzBkvyGiE3gw64PX
+         k6nQ==
+X-Gm-Message-State: AOJu0YzvU8dXHjbRFJasLHkzHZNN2glpa9YkAr1fz4WsKaw0a+s7yi3L
+	Ks9xZC/SpjNZrfJsoEyiMpfKS2PkYulMRAw833Kot81wrBakZcijdLcmFsB9FcMLAYZzBrXF1iD
+	OBdPYcg2zabfYpJk73KZhI9hoAfMZOv4G
+X-Google-Smtp-Source: AGHT+IEddWXBanxs5Bq5VfSVI6/qK4HqQInELkp+DMfMHXMJQJPmPczdgVSTWsTqSXojJHKuB7b3kAm4AjD8O+sAaNQ=
+X-Received: by 2002:a2e:a4a2:0:b0:2d8:74f9:9265 with SMTP id
+ g2-20020a2ea4a2000000b002d874f99265mr2928438ljm.14.1713018836913; Sat, 13 Apr
+ 2024 07:33:56 -0700 (PDT)
+MIME-Version: 1.0
+From: =?UTF-8?Q?Alo=C3=AFs_Charlier?= <aloischarlier100@gmail.com>
+Date: Sat, 13 Apr 2024 16:33:45 +0200
+Message-ID: <CAKEE29+ChjAGV8J+sz56pbeDVjvzA8xr5RB1eMQ8X-BzBP0KXw@mail.gmail.com>
+Subject: test4
+To: user@l2-2.ephec-ti.be
+Content-Type: multipart/alternative; boundary="00000000000044986f0615fb47e3"
+
+--00000000000044986f0615fb47e3
+Content-Type: text/plain; charset="UTF-8"
+
+dom ext to dom int
+
+--00000000000044986f0615fb47e3
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">dom ext to dom int<br></div>
+
+--00000000000044986f0615fb47e3--

@@ -1,0 +1,22 @@
+Return-Path: <user2@l2-2.ephec-ti.be>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id cJTPHJOBGmb2XgAAs8Qtnw
+	(envelope-from <user2@l2-2.ephec-ti.be>)
+	for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 12:58:59 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 74476211AD
+	for <user@l2-2.ephec-ti.be>; Sat, 13 Apr 2024 12:58:59 +0000 (UTC)
+Message-ID: <f20ba1d4-5f5f-4ad5-8d48-362162f88ad6@l2-2.ephec-ti.be>
+Date: Sat, 13 Apr 2024 14:58:58 +0200
+MIME-Version: 1.0
+Content-Language: en-US
+To: user@l2-2.ephec-ti.be
+From: user2 <user2@l2-2.ephec-ti.be>
+Subject: test 2
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+2 vers 1
+

@@ -1,0 +1,11 @@
+version: "3"
+services:
+ DNS:
+  build: .
+  image: dns
+  ports: 
+   - 53:53/udp
+   - 53:53/tcp
+  volumes :
+   - ./l2-2.zone:/etc/bind/l2-2.zone
+   - ../certificate/archive:/etc/letsencrypt/archive

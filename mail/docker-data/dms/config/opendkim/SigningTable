@@ -1,0 +1,3 @@
+*@example.co mail._domainkey.example.co
+*@example.com mail._domainkey.example.com
+*@l2-2.ephec-ti.be mail._domainkey.l2-2.ephec-ti.be

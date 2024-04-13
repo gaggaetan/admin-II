@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: nginx_serveur
+    hostname : nginx_serveur
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html/:/var/www/html
+      - ../certificate/nginx-selfsigned.crt:/etc/ssl/certs/nginx-selfsigned.crt
+      - ../certificate/nginx-selfsigned.key:/etc/ssl/private/nginx-selfsigned.key
+      - ../certificate/:/etc/letsencrypt/
+    restart: always
+    networks:
+      - dmz
+
+  db:
+    image: mariadb
+    container_name: db
+    hostname: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
+      MYSQL_DATABASE: ${DATABASE}
+      MYSQL_USER: ${USER_DB}
+      MYSQL_PASSWORD: ${USER_PASS}
+    volumes:
+      - ./DB/sql:/docker-entrypoint-initdb.d
+      - ./DB/conf/my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf
+    networks:
+      - db_net
+  php:
+    image: php
+    container_name: php
+    hostname: php
+    volumes:
+      - ./html:/var/www/html
+    networks:
+      - dmz
+      - db_net
+networks:
+  dmz:
+  db_net:
