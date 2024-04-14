@@ -1,0 +1,31 @@
+Return-Path: <user2@l2-2.ephec-ti.be>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id tcfyIMIIHGZpIgAAs8Qtnw
+	(envelope-from <user2@l2-2.ephec-ti.be>)
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 16:48:02 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 778F229F58
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 16:48:02 +0000 (UTC)
+Message-ID: <a3bc0d07-8688-43f2-82f2-b0eb4efa753b@l2-2.ephec-ti.be>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=l2-2.ephec-ti.be;
+	s=mail; t=1713113282;
+	bh=g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=; h=To:From:Subject;
+	b=BZcjpj03glWUhQnnR9Z0YkJkJ9xcUwuJjziLDNgykKfBEftyQCpcjXBBcJ54epwMs
+	 DYJ00GIQ9Yp3TTZKyCxsOQg0VLdqWc0A2NydsiC8SWXrfy3RlJ58EuYop2QPXpu3bW
+	 QgXusoXskI1BmAz4HzSH+RNCO8ZyhYfaPvF0AfywfCyQnItwN90Ff2qde3IKBddUqL
+	 cGIQy0rOMh1PPYwaSR23hZlmnWuiYs5XNF7oWA4apoEsVkCR8jA1C9+1JfsB/+Wju9
+	 MuxmZO9eRM3510THxIpd2ReyoZmI5slpKtErCIWKnKjlmBliJkALxlBTPHpsKG/3Bd
+	 BK+REBdak8+WA==
+Date: Sun, 14 Apr 2024 18:48:02 +0200
+MIME-Version: 1.0
+Content-Language: en-US
+To: user@l2-2.ephec-ti.be
+From: user2 <user2@l2-2.ephec-ti.be>
+Subject: test spamassassin header
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+test
+

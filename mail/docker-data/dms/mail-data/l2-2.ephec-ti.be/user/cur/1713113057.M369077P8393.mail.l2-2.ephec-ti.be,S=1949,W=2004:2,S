@@ -1,0 +1,55 @@
+Return-Path: <user2@l2-2.ephec-ti.be>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id BSbBFeEHHGbJIAAAs8Qtnw
+	(envelope-from <user2@l2-2.ephec-ti.be>)
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 16:44:17 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 4949D29ED7
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 16:44:17 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary="------------mUtdsMDmKhsHx1jC09Vb01Wh"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=l2-2.ephec-ti.be;
+	s=mail; t=1713113057;
+	bh=ovjrcpfnyY21gYqVJHW7NnDwoYwezmfiLeU0G2RSo9s=; h=To:From:Subject;
+	b=E97VkuYXEPHV5SGYN0El52xkQeXZT2zcNg5op/SWfZvRzNmdLGIc4tJHkJkVOfpEY
+	 GTOiLwaH3zF6sVZ1NwZUQnnPuyBRe1bZzuwgc54r5nv6ZOE1e9nQzz/v+lYOQOTCvn
+	 9V3p4z4lNS2e7E71P2dAmwHNJTTsZ6l4WwX/JWXOFCJpiF9nZLkT0qWUmnVxZDkfVN
+	 Fg0vdxgSEifGM6HTcJmaAorug1EaMaA9BXNtNMz//ahg43sEgdFWFPDM88rQPDd/0E
+	 Ntpk2Wlvrcpe7t9gglXBVK20WB1rqRhCgsHqtxAwZ0le1pWZnV8x41Fr4PaOSGJzar
+	 h0PK5XIUklj4Q==
+Message-ID: <91165dbf-fc27-4dab-97ad-3d293a0f0d0c@l2-2.ephec-ti.be>
+Date: Sun, 14 Apr 2024 18:44:17 +0200
+MIME-Version: 1.0
+Content-Language: en-US
+To: user@l2-2.ephec-ti.be
+From: user2 <user2@l2-2.ephec-ti.be>
+Subject: Test spam mail (GTUBE)
+
+This is a multi-part message in MIME format.
+--------------mUtdsMDmKhsHx1jC09Vb01Wh
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+
+--------------mUtdsMDmKhsHx1jC09Vb01Wh
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <pre>XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+
+</pre>
+    <p></p>
+  </body>
+</html>
+
+--------------mUtdsMDmKhsHx1jC09Vb01Wh--

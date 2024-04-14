@@ -11,8 +11,11 @@ $TTL 86400
         IN      MX      10      mail.l2-2.ephec-ti.be.
 
 _acme-challenge	IN	TXT	3jaTCjEF9WNa9tn5dzrdh63YpqDloepukt48sGhfKnE
-test	IN	TXT	test2
 l2-2.ephec-ti.be.	IN	TXT	"v=spf1 mx -all"
+mail._domainkey	IN	TXT	( "v=DKIM1; h=sha256; k=rsa; "
+          "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqI4AGSUMUuUXD1I5IG/Cxnfs9m2+4vL6tlPK5OuTBFN0jnt7m9jA9QzE6SvX/PBqxjOWZXvhbohZGMNOLpf5EPEIHPCutXYuNL63v/l36JK9jfABehVlYH/sruaTNeqD3VCrHL6Ner+mv+5MSQHHvfpL0HtePw5uw/Zct8ziBpE4nzkE5IiniD94FMDm9Uzc5E+Uxo/2XMA4w0"
+          "BZDa0cTRFTGt+kmtURBCiZUpcQ/2tK07N5L/yjGBdFJrPl3mB+MlyyQzwP8p0yctN9ZpIXcJ0jNj8Ny4dL9+/43q73icrk/h/Y5kr4KdB286eVKpPDjgxGm9jMLpYtPjEl5KXsFwIDAQAB" )
+_dmarc.l2-2.ephec-ti.be.	IN	TXT	"v=DMARC1; p=none; rua=mailto:user2@l2-2.ephect-ti.be; ruf=mailto:user2@l2-2.ephect-ti.be; sp=none; ri=86400"
 
 ns      IN      A       54.37.12.177
 www     IN      A       54.37.12.177

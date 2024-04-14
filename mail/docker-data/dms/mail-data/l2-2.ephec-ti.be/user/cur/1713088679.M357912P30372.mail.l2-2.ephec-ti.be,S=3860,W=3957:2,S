@@ -1,0 +1,97 @@
+Return-Path: <>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id MAgmFaeoG2akdgAAs8Qtnw
+	(envelope-from <>)
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 09:57:59 +0000
+Received: by mail.l2-2.ephec-ti.be (Postfix)
+	id 559C029F2B; Sun, 14 Apr 2024 09:57:59 +0000 (UTC)
+Date: Sun, 14 Apr 2024 09:57:59 +0000 (UTC)
+From: MAILER-DAEMON@mail.l2-2.ephec-ti.be (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: user@l2-2.ephec-ti.be
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="4EE1729F29.1713088679/mail.l2-2.ephec-ti.be"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20240414095759.559C029F2B@mail.l2-2.ephec-ti.be>
+
+This is a MIME-encapsulated message.
+
+--4EE1729F29.1713088679/mail.l2-2.ephec-ti.be
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host mail.l2-2.ephec-ti.be.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<aloicharlier100@gmail.com>: host gmail-smtp-in.l.google.com[173.194.222.26]
+    said: 550-5.1.1 The email account that you tried to reach does not exist.
+    Please try 550-5.1.1 double-checking the recipient's email address for
+    typos or 550-5.1.1 unnecessary spaces. For more information, go to 550
+    5.1.1  https://support.google.com/mail/?p=NoSuchUser
+    i26-20020a2ea37a000000b002d8539a4e37si1967624ljn.607 - gsmtp (in reply to
+    RCPT TO command)
+
+--4EE1729F29.1713088679/mail.l2-2.ephec-ti.be
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail.l2-2.ephec-ti.be
+X-Postfix-Queue-ID: 4EE1729F29
+X-Postfix-Sender: rfc822; user@l2-2.ephec-ti.be
+Arrival-Date: Sun, 14 Apr 2024 09:57:58 +0000 (UTC)
+
+Final-Recipient: rfc822; aloicharlier100@gmail.com
+Original-Recipient: rfc822;aloicharlier100@gmail.com
+Action: failed
+Status: 5.1.1
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does
+    not exist. Please try 550-5.1.1 double-checking the recipient's email
+    address for typos or 550-5.1.1 unnecessary spaces. For more information, go
+    to 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser
+    i26-20020a2ea37a000000b002d8539a4e37si1967624ljn.607 - gsmtp
+
+--4EE1729F29.1713088679/mail.l2-2.ephec-ti.be
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Return-Path: <user@l2-2.ephec-ti.be>
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 4EE1729F29
+	for <aloicharlier100@gmail.com>; Sun, 14 Apr 2024 09:57:58 +0000 (UTC)
+Message-ID: <30ad2d50-858a-41b5-9197-390743ea4c96@l2-2.ephec-ti.be>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=l2-2.ephec-ti.be;
+	s=mail; t=1713088678;
+	bh=g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=; h=To:From:Subject;
+	b=LcolmtNlt7eHGuuFiVf77+SqUMHuU3tpl4oNGUmCTSUk1wXJX31tGaVOL8BKb5A3T
+	 dtKx8tInXGio8hyWM0y+QOEqQw30A8M2RXCeEzV8x9dckvpmGqs9W21SYKKJTfNNFs
+	 N/v0BT3//PA0z+UW4lQBB9/GCg0oaoz+lDvociYiF9p9W8fbQ+cMeaMJFtp78cI19a
+	 Um7NmYpv2yXZFv51Eh/Sq9ACzpg+k+dmFh9QBR6f+7k8Pd/c3Y3mcIvt9CSA9lQ5ME
+	 vjPefbEBJUYKV5S++jNHEVprclLHBa/24Is86BdKKMwHHi95NErIK9EG5QQc99ntMC
+	 302S19ToqBoFA==
+Date: Sun, 14 Apr 2024 11:57:57 +0200
+MIME-Version: 1.0
+Content-Language: en-US
+To: aloicharlier100@gmail.com
+From: user <user@l2-2.ephec-ti.be>
+Subject: test out 2
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+test
+
+
+--4EE1729F29.1713088679/mail.l2-2.ephec-ti.be--

@@ -1,0 +1,31 @@
+Return-Path: <user2@l2-2.ephec-ti.be>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id oMVHH9QOHGYzLQAAs8Qtnw
+	(envelope-from <user2@l2-2.ephec-ti.be>)
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 17:13:56 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 70EA629F52
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 17:13:56 +0000 (UTC)
+Message-ID: <a8e62842-1e7e-4c65-a215-a2a9f127a16f@l2-2.ephec-ti.be>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=l2-2.ephec-ti.be;
+	s=mail; t=1713114836;
+	bh=g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=; h=To:From:Subject;
+	b=OkJQAwRRvXvdyncHMEIwdW7B/mNiLh2WjWgol47rD5JRengSQIvtYdBpAkhoHEL23
+	 fPOSuMQ4vDtLL+ePm+gSnrVUVUBlQMUWqMHFraQJ/axFE2KFf9/CG/E5O4w9+TZ+7h
+	 CMzJT6eJLZErsRyF8k90LzyKO0RYSSse9Qwy3MJ2OfiZYHl+Y8sfxCiC9Avq4P4sYc
+	 Zp1E2NBVBzRfUVJqvHz8EeKiGvzvxeHic8XThvWjralTc4uLc6/AYa8tb2/cDqekL3
+	 ptjaQOPgROtgA1EVtvrwDHwNBeqlllAleEyd25CVNM5dbCXC5+5aiVXnOBZj9gnOnG
+	 VYARPrpARzqYQ==
+Date: Sun, 14 Apr 2024 19:13:56 +0200
+MIME-Version: 1.0
+Content-Language: en-US
+To: user@l2-2.ephec-ti.be
+From: user2 <user2@l2-2.ephec-ti.be>
+Subject: test
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+test
+

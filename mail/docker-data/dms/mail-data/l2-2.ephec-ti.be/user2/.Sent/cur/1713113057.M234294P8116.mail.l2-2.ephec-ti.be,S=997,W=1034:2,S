@@ -1,0 +1,37 @@
+Content-Type: multipart/alternative;
+ boundary="------------mUtdsMDmKhsHx1jC09Vb01Wh"
+Message-ID: <91165dbf-fc27-4dab-97ad-3d293a0f0d0c@l2-2.ephec-ti.be>
+Date: Sun, 14 Apr 2024 18:44:17 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: user@l2-2.ephec-ti.be
+From: user2 <user2@l2-2.ephec-ti.be>
+Subject: Test spam mail (GTUBE)
+
+This is a multi-part message in MIME format.
+--------------mUtdsMDmKhsHx1jC09Vb01Wh
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+
+--------------mUtdsMDmKhsHx1jC09Vb01Wh
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <pre>XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+
+</pre>
+    <p></p>
+  </body>
+</html>
+
+--------------mUtdsMDmKhsHx1jC09Vb01Wh--

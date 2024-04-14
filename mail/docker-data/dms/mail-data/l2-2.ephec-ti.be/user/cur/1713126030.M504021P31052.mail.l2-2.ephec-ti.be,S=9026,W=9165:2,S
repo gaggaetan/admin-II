@@ -1,0 +1,139 @@
+Return-Path: <a.charlier@students.ephec.be>
+Delivered-To: user@l2-2.ephec-ti.be
+Received: from mail.l2-2.ephec-ti.be
+	by mail.l2-2.ephec-ti.be with LMTP
+	id dMbcHY46HGZMeQAAs8Qtnw
+	(envelope-from <a.charlier@students.ephec.be>)
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 20:20:30 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTP id 6D11629F65
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 20:20:30 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=40.107.14.112; helo=eur01-ve1-obe.outbound.protection.outlook.com; envelope-from=a.charlier@students.ephec.be; receiver=<UNKNOWN> 
+Authentication-Results: mail.l2-2.ephec-ti.be; dmarc=none (p=none dis=none) header.from=students.ephec.be
+Authentication-Results: mail.l2-2.ephec-ti.be;
+	dkim=pass (1024-bit key; unprotected) header.d=ephec.onmicrosoft.com header.i=@ephec.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-ephec-onmicrosoft-com header.b=olelAiAm;
+	dkim-atps=neutral
+Received: from EUR01-VE1-obe.outbound.protection.outlook.com (mail-ve1eur01on2112.outbound.protection.outlook.com [40.107.14.112])
+	by mail.l2-2.ephec-ti.be (Postfix) with ESMTPS id 09FB229F5B
+	for <user@l2-2.ephec-ti.be>; Sun, 14 Apr 2024 20:20:29 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GRcgTV3ErSq2//dFUxvkBieTY0L0TZyTMPLgvIPMZDDYJEnCt/LeM9elAgLuvoKohATWUR8AigYCUsRR/tt6Kk/KUe4m8MA/jHe0tvaWwmuttW2YQ/yl7z//jrDo3FpRFLYnlH6hyYGfFsFDi5bq99CDPB8fg1cke5iOnK+HqErKYG3i+D2eyvhMfMT1VbxmT05zLQ5xEKxC3mvoYMmoj+xHOgo53EN7rF9F4kj8Do/Pn5qJJbF6ZU0pfXPOXpBp68bUEUCSd/ewdoM4bcJ67DqLPTdACHvaDfdOeiSY1YzyDUd9xPot9NJ0Ih2mwgeeJ108ToWwxb9sRc/L8JLR8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mXWy9lKWbfhZoWyTGzZ3uyNwqhtVI+TVoaTSizDmEgQ=;
+ b=VSiCTEwlDrBdm885jX6eG8StT3YmJ3h5YWL0N35OFVh0ZPHaRqzAwki159POedSq2VqGM1aIySQwp4FsEnB+RKTJCTGk5MjMebploIpmO6qrHGm//bmNjJgz+qAkoKAFpO3lkptiMaY/augvWGHl/+vuvt17SQrjYl5WH2nesTRDS5GszJ+Ml796ziZPH1sYCJfxYJSLWk8uP0fIumMqo5D8H9LjkyEQOZBcwCHLcjk62WSq8p2ClFPWetI4iVTbZ6iRNcgZKmgyYE4Zx2xUwf4e6uNUHffIACLR5sjHbtbvTOii3z3KAhtIOQqPxtD+1wwRXYPyWAG0bvbmH/iFmQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=students.ephec.be; dmarc=pass action=none
+ header.from=students.ephec.be; dkim=pass header.d=students.ephec.be; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ephec.onmicrosoft.com;
+ s=selector2-ephec-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mXWy9lKWbfhZoWyTGzZ3uyNwqhtVI+TVoaTSizDmEgQ=;
+ b=olelAiAmz9+B+C7gVeYQVLqRok3+47NUb1Pyfhlynz0D4NAJvyxWsnirDIXkM+7uoeehhIRn+02XCvpzAOQaL1QsQy6iodLYWenpLd49M/4PrfgZj+Ku36LPlQAg9MKBksfK0n47DROZgnh6/W3JOSymSG5SFASf5mpCcbD5p5A=
+Received: from DB5PR05MB10782.eurprd05.prod.outlook.com (2603:10a6:10:48f::21)
+ by VI1PR05MB6734.eurprd05.prod.outlook.com (2603:10a6:800:13d::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7452.50; Sun, 14 Apr
+ 2024 20:20:20 +0000
+Received: from DB5PR05MB10782.eurprd05.prod.outlook.com
+ ([fe80::fb9f:10c7:1ac:a83c]) by DB5PR05MB10782.eurprd05.prod.outlook.com
+ ([fe80::fb9f:10c7:1ac:a83c%7]) with mapi id 15.20.7452.046; Sun, 14 Apr 2024
+ 20:20:20 +0000
+From: =?iso-8859-1?Q?CHARLIER_Alo=EFs?= <a.charlier@students.ephec.be>
+To: "user@l2-2.ephec-ti.be" <user@l2-2.ephec-ti.be>
+Subject: test
+Thread-Topic: test
+Thread-Index: AQHajqksa9wyO8hIj0aj4uuWJ9MrfA==
+Date: Sun, 14 Apr 2024 20:20:20 +0000
+Message-ID:
+ <DB5PR05MB10782CA9BB810CEB64524154CD90A2@DB5PR05MB10782.eurprd05.prod.outlook.com>
+Accept-Language: fr-FR, en-US
+Content-Language: fr-FR
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=students.ephec.be;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DB5PR05MB10782:EE_|VI1PR05MB6734:EE_
+x-ms-office365-filtering-correlation-id: 8d36072c-88a5-4098-4088-08dc5cc04ea6
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ cTWZOvFGZdiSEWt4jTXf3TOWfpwfCBNa/svKh8BTpEz2xc2Ed94nOULD3vrj3MYyYw1utiFEquveeHsqPY4de+zrUYSq326+ZstBqkArRqQEkTOkMsmldhNbL61y3EzLVayaF0ZcrK4a7c+9n54xe4fHW0HQ95D52JOLG+/v8g+yzztlP2YHDEUs6ttTfgkkc6gzckf1D6Sc7Il+zDae0HasI7HNu5GUlhC9ieafwdwntD4AvYxzyxDZ3pHLyHjfcROYDDdJ160IhoMxkJ8/p5YXrcT+dxmCjnngbp/aNH5cOHwJ4/LZzKqXqGQJwmzFBeKpkNYUIANvcAyNwjsdOv6dPDYf6kd5parqyrOHiyb4PXJRi/RKs9o6YpK9PX8XGcEC+xi/DURXc9r+8zCGm2q6jr7ZBgMjEJhbUv+98uI0sEIGJb8cDIyBvdkZESyOPn1zkycfO89MScF9eyFHLA==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:fr;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB5PR05MB10782.eurprd05.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(41320700004)(1800799015)(376005)(366007)(38070700009);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?lvcYr0fDbUO0nZyl+6Vs+aCjaZsLmz71F6qahGgGhQo+KhJW/6HiZaLFC+?=
+ =?iso-8859-1?Q?0vtP3+artNwGKTV9aTIEqL3vU/U+D5Th1n873Bn0ygl4Cvn6Kv1Wo+exVX?=
+ =?iso-8859-1?Q?VfgozBsg04x6yTGTiJ064ILKyAvWrkh8XPtvltVRS1r7ymDTH+jX+3zuLP?=
+ =?iso-8859-1?Q?sgGaWJXViXr+/ly5wxEFIaOHXrCercED0ZIsmYSBo3bAQuCVAHTqS7QJOC?=
+ =?iso-8859-1?Q?eCd/JuQl64iRyYrGYTkU0k/RYH1KKmaQiHNZfnFu8fDilqrncH4ZifJTZt?=
+ =?iso-8859-1?Q?xxDodAQMg7I2VIxZ6oDrsqbaDgYDJNxo24jixNorpOYF0zn6pnX0aowO7y?=
+ =?iso-8859-1?Q?j0UyueZFXOgp53YrOLFHpw/yFYqzOYfwftXTa9y0tVOTNY4V5eWg65TIzG?=
+ =?iso-8859-1?Q?pT/W+OxNd7XhSgC0MayPxliuHDK4tuJ5k7azxuzkDB64fVFxFIthJiCWI4?=
+ =?iso-8859-1?Q?UH0WG5aq5mC2ConEfveNd/pn3WNrr3nBjtR2ORW1MaCmYoOwwg8sYpxx8M?=
+ =?iso-8859-1?Q?3X9zIe5+/ybFHo0+pv1JsHKSarrInI75ZeyrcH71f7QIvw/mFnua64PS4j?=
+ =?iso-8859-1?Q?Ngt9/kN8aw4N0PnCwHw2wvKuObgXbrCnF2c854d2yG6Svuje3pqQo9cTj7?=
+ =?iso-8859-1?Q?wvVhjjom873WJi9sgNFYp9uoLbiW6g8SepjHI1Q32NGAy9MbSQLmQloOdT?=
+ =?iso-8859-1?Q?99/W985UMQjh34lWH9jSZFnaKaiNVIGp60INrGIbAb2v34xnjEmqTxIm/3?=
+ =?iso-8859-1?Q?Ibso7sG5zLUFYgNFSk2WAyPjpp1u+IhIYtvh41WHAbW/aJ6hvtcWyPjti4?=
+ =?iso-8859-1?Q?QhNvPEL846lc9dK050N0DndCEVH3u5I34lTfeGPBCUiyRn6WuT2Num3jfP?=
+ =?iso-8859-1?Q?MAJi2Z2j833oC+otzHPGnLKPda/ZCOdm11hJI1JgTQkQRlyEHJoLe7+3PM?=
+ =?iso-8859-1?Q?UE2+KQA5rYAndnTGDaMd7cM3y8g1euBdie78a2kRrN8xO+xM5ntTogGgQm?=
+ =?iso-8859-1?Q?UZwj9Uv+Z9H8DbKirTkrpQDcNB+CzXL5rX6zy4idRkxb6xlYtKCMyssmhP?=
+ =?iso-8859-1?Q?5JuVsxDpxLc6dPjLME+NbgYXNSV3WUWw3FEnWjkVFxohFzmhwu3uzs9lcP?=
+ =?iso-8859-1?Q?drDP4CAvBME/vuPKx9So5aET87f28T2bdiMGR39oOtY1xOpY/AIBOctYKU?=
+ =?iso-8859-1?Q?E8pzdQwO2YghpsQVvXA7p+Fhp1gC+tDjPr2WUqA7d6ErqAF/XdUcD+MOOJ?=
+ =?iso-8859-1?Q?4RKbmUw7c9ncBQXTeXNleQeeyEytIHrrj6zEy6EzDiDl12rtFelcNWAHAv?=
+ =?iso-8859-1?Q?w6rbk7/7wKxvHAGXlCPn0bYJcl+WBOKRhkt/LAw/4Ix4XxlJnCF7ndjH3/?=
+ =?iso-8859-1?Q?HBI1r9lxJhOV7de+ft/M4IXIm5+dfMVNJcLythgKfU5fbRx/Oly2crEW5h?=
+ =?iso-8859-1?Q?wpMLC9c2irJoLLCKkYHP/Zno72knXzEzUcsi6oQ0cRyr7bp4wYCfI21djI?=
+ =?iso-8859-1?Q?c1/fEmDDPfffMfPsSZ/dPaX1QZh8E+x7JrjYT6A4eYtR6ocLHcWqaLKwFo?=
+ =?iso-8859-1?Q?HqDdkyALfjSldPxtmlBv1SZ4XmdpCO6PXNftShnDEabOgK3UO5zaJdzIDR?=
+ =?iso-8859-1?Q?MhyUU+0D8mQoAv11OwJ17xxCyX/U6rJbWs4A9UI1AzSmJLJ7Y+Tu4VCS2e?=
+ =?iso-8859-1?Q?wGSotIk3CYXHyUTunggWV20RretYQksxB647MCPH?=
+Content-Type: multipart/alternative;
+	boundary="_000_DB5PR05MB10782CA9BB810CEB64524154CD90A2DB5PR05MB10782eu_"
+MIME-Version: 1.0
+X-OriginatorOrg: students.ephec.be
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DB5PR05MB10782.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8d36072c-88a5-4098-4088-08dc5cc04ea6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2024 20:20:20.2578
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 21936fc0-be19-4e1b-ad89-4def5c23b4cb
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Ipcnz/NzOgdJu60CHCccwbiRPyYFjLLt6XYZccn6RGmykG1EYPYuwyE99eTNqsuvSVvYdAZWjZeXGk8yb2J8uk4hk9vYGwUnu8n+TgGis2k=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6734
+
+--_000_DB5PR05MB10782CA9BB810CEB64524154CD90A2DB5PR05MB10782eu_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+test
+
+--_000_DB5PR05MB10782CA9BB810CEB64524154CD90A2DB5PR05MB10782eu_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+test</div>
+</body>
+</html>
+
+--_000_DB5PR05MB10782CA9BB810CEB64524154CD90A2DB5PR05MB10782eu_--
