@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "flask": "^0.2.10",
     "nvm": "0.0.4",
     "playwright": "^1.43.0",
     "puppeteer": "^22.6.3"
